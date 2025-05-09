@@ -10,7 +10,7 @@ function IngredientsList(props) {
                   </ul>
               </div>
           </section>}
-          {props.ingredient.length > 3 && <div className="get-recipe-div">
+          {props.ingredient.length > 3 && <div ref={props.ref} className="get-recipe-div">
               <div>
                   <h3>Ready for recipe?</h3>
                   <p>Generate a recipe from your list of ingredients.</p>

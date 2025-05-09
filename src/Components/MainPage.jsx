@@ -7,8 +7,19 @@ import { getRecipeMistral } from "./ai";
 
 
 function Addingredients() {
-  const [ingredient, setIngredients] = React.useState([])
+  const [ingredient, setIngredients] = React.useState(['Chicken', 'Chicken', 'Chicken','Chicken'])
   const [recipeShown, setRecipeShown]= React.useState("")  
+
+  const recipeSection = React.useRef(null)
+
+  React.useEffect(()=>{
+    if(recipeShown !== "" && recipeSection.current !== null){
+      recipeSection.current.scrollIntoView({behavior : "smooth"})
+    }
+
+  },[recipeShown])
+
+
   function AddItem(formData){   
     const item = formData.get('listItems')?.trim();
     setIngredients(prevItem => [...prevItem, item])
@@ -21,7 +32,6 @@ function Addingredients() {
   }
  const handleRecipe = async ()=>{
    const result = await getRecipeMistral(ingredient)
-  console.log(result)
   setRecipeShown(result)
 
  }
@@ -37,6 +47,7 @@ function Addingredients() {
         <button className="add-ingredients-btn" type="submit">+Add ingredients</button>
     </form>
     <IngredientsList
+        ref={recipeSection}
         ShowRecipe={ShowRecipe}
         ingredient ={ingredient}
     />

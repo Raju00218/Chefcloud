@@ -93,7 +93,11 @@ ul li,ol li{
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.9s ease;
 
+}
+.get-recipe-div button:active {
+    transform: scale(0.93);
 }
 .suggested-recipe-container{
     color: #475467;
@@ -105,4 +109,5 @@ ul li,ol li{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 5rem;
 }
