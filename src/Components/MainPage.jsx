@@ -7,7 +7,7 @@ import { getRecipeMistral } from "./ai";
 
 
 function Addingredients() {
-  const [ingredient, setIngredients] = React.useState(['Chicken', 'Chicken', 'Chicken','Chicken'])
+  const [ingredient, setIngredients] = React.useState([])
   const [recipeShown, setRecipeShown]= React.useState("")  
 
   const recipeSection = React.useRef(null)
