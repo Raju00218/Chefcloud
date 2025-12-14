@@ -1,5 +1,5 @@
-import { HfInference } from '@huggingface/inference';
 
+import { GoogleGenAI } from "@google/genai";
 const apiKey = import.meta.env.VITE_MY_API_KEY;
 
 const SYSTEM_PROMPT = `
@@ -9,28 +9,30 @@ in your recipe. The recipe can include additional ingredients they didn't mentio
 extra ingredients. Format your response in markdown to make it easier to render to a web page.
 `;
 
-const hf = new HfInference(apiKey);
+const genAi = new GoogleGenAI({apiKey});
 
 // Optional: Only needed if you're manually using fetch, not required for `hf.chatCompletion`
-const headers = {
-    "Authorization": `Bearer ${apiKey}`
-};
+// const headers = {
+//     "Authorization": `Bearer ${apiKey}`
+// };
 
 export async function getRecipeMistral(ingredientArr) {
     const ingredientsString = ingredientArr.join(", ");
     try {
-        const response = await hf.chatCompletion({
-            model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
-            messages: [
-                { role: 'system', content: SYSTEM_PROMPT },
-                { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
+        const response = await genAi.models.generateContent({
+            model: "gemini-2.5-flash",
+            contents: [
+                { role: "user", parts: [{ text:`I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` }]},
             ],
-            max_tokens: 1024
+            config: {
+                systemInstruction: SYSTEM_PROMPT, // SYSTEM_PROMPT must be a string
+                maxOutputTokens: 2024,
+            },
         });
-        return response.choices[0].message.content;
+        return response.text || "No recipe found.";
     } catch (err) {
         console.error("❌ API Error:", err.message);
         throw err; // re-throw for upstream handling if needed
     }
 }
-
+// await getRecipeMistral()

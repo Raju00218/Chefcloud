@@ -1,3 +1,5 @@
+
+import Loader from "../Components/loader";
 function IngredientsList(props) {
     const newIngredients = props.ingredient.map((ingredient, index) => (<li key={index}>{ingredient}</li>));
   return (
@@ -15,7 +17,7 @@ function IngredientsList(props) {
                   <h3>Ready for recipe?</h3>
                   <p>Generate a recipe from your list of ingredients.</p>
               </div>
-              <button onClick={props.ShowRecipe} >Get a recipe</button>
+              <button onClick={props.ShowRecipe} >{props.loader ? <><Loader /> Loading...</> :"Get a recipe"}</button>
           </div>}
     </>
   );

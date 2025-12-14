@@ -1,0 +1,120 @@
+/* From Uiverse.io by Fernando-sv */
+.loader {
+    border: 4px solid rgb(255, 251, 251);
+    /* border-left-color: transparent; */
+    border-radius: 50%;
+}
+
+.loader {
+    border: 4px solid rgb(255, 254, 254);
+    /* border-left-color: transparent; */
+    width: 20px;
+    height: 20px;
+}
+
+.loader {
+    /* border: 4px solid rgba(0, 0, 0, .1); */
+    border-left-color: transparent;
+  width: 15px;
+    height: 15px;
+    animation: spin89345 1s linear infinite;
+}
+
+@keyframes spin89345 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ /* Footer Styling */
+ .chefcloud-footer {
+     width: 100%;
+     background-color:#FAFAF8;
+     /* Equivalent to bg-gray-50 */
+     border-top: 1px solid #e5e7eb;
+     /* Equivalent to border-t border-gray-200 */
+     color: #4b5563;
+     /* Equivalent to text-gray-700 */
+     padding-top: 2rem;
+     /* Equivalent to py-8 */
+     padding-bottom: 2rem;
+     /* Equivalent to py-8 */
+     /* box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.05); */
+     /* Equivalent to shadow-inner */
+     margin-top: auto;
+ }
+
+ .footer-content {
+     max-width: 1280px;
+     /* Equivalent to max-w-7xl */
+     margin-left: auto;
+     margin-right: auto;
+     padding-left: 1rem;
+     /* Equivalent to px-4 */
+     padding-right: 1rem;
+     text-align: center;
+ }
+
+ /* Website Name Styling */
+ .website-name {
+     font-size: 2.25rem;
+     /* Equivalent to text-4xl */
+     font-weight: 300;
+     /* Equivalent to font-light */
+     color: #1f2937;
+     /* Equivalent to text-gray-800 */
+     letter-spacing: 0.05em;
+     /* Equivalent to tracking-wider */
+     margin-bottom: 0.5rem;
+     /* Equivalent to mb-2 */
+ }
+
+ .website-name strong {
+     font-weight: 600;
+     /* Equivalent to font-semibold */
+     color: #d97706;
+     /* Equivalent to text-amber-600 */
+ }
+
+ /* Tagline Styling */
+ .tagline {
+     font-size: 0.75rem;
+     /* Equivalent to text-xs */
+     color: #6b7280;
+     /* Equivalent to text-gray-500 */
+     margin-bottom: 1rem;
+     /* Equivalent to mb-4 */
+     font-style: italic;
+ }
+
+ /* Copyright Styling */
+ .copyright {
+     font-size: 0.875rem;
+     /* Equivalent to text-sm */
+     color: #6b7280;
+     /* Equivalent to text-gray-500 */
+ }
+
+ /* Responsive adjustments for smaller screens */
+ @media (min-width: 640px) {
+
+     /* Equivalent to sm: */
+     .footer-content {
+         padding-left: 1.5rem;
+         /* Equivalent to sm:px-6 */
+         padding-right: 1.5rem;
+     }
+ }
+
+ @media (min-width: 1024px) {
+
+     /* Equivalent to lg: */
+     .footer-content {
+         padding-left: 2rem;
+         /* Equivalent to lg:px-8 */
+         padding-right: 2rem;
+     }
+ }
