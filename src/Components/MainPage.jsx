@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 function Addingredients() {
-  const [ingredient, setIngredients] = React.useState(["Spice mixt","Chicken breasts","Yogurt","Lemon juice","Garlic","Ginger","Cumin","Coriander","Turmeric","Paprika",])
+  const [ingredient, setIngredients] = React.useState([])
   const [recipeShown, setRecipeShown]= React.useState("")  
   const [loading, setLoading]= useState(false)
 
