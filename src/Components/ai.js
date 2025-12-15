@@ -31,8 +31,8 @@ export async function getRecipeMistral(ingredientArr) {
         });
         return response.text || "No recipe found.";
     } catch (err) {
-        console.error("❌ API Error:", err.message);
-        throw err; // re-throw for upstream handling if needed
+    //    alert("Error fetching recipe: " + err.message);
+       return(err.message) // re-throw for upstream handling if neede
     }
 }
 // await getRecipeMistral()

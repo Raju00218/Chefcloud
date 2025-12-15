@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Loader from "../Components/loader";
 function IngredientsList(props) {
     const newIngredients = props.ingredient.map((ingredient, index) => (

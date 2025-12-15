@@ -5,8 +5,11 @@ body{
     background-color: #FAFAF8;
 }
 .app-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color:#FFFFFF ;
-    font-family: 'Capriola';
+    /* font-family: 'Capriola'; */
     padding: 10px;
     box-shadow:5px 0px 6px gray  ;
     height: 3rem;
@@ -14,9 +17,16 @@ body{
     top: 0;
 
 }
+ .app-name strong {
+     font-weight: 600;
+     /* Equivalent to font-semibold */
+     color: #d97706;
+     /* Equivalent to text-amber-600 */
+ }
 .app-name{
     text-align: center;
     margin-top: 3px;
+    font-size: 30px;
 }
 .ingredient-form{
     display: flex;
@@ -95,9 +105,9 @@ ul div:hover .removeBtn{
 
 .get-recipe-container{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px;
     width: 100%;
 }
 /* @media (max-width: 768px) {

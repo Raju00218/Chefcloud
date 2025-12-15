@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 function Addingredients(props) {
-  const [ingredient, setIngredients] = useState(["raju" ,"apple","banana"]);
+  const [ingredient, setIngredients] = useState([]);
   const [recipeShown, setRecipeShown]= useState("")  
   const [loading, setLoading]= useState(false)
 
@@ -38,7 +38,9 @@ function Addingredients(props) {
  const handleRecipe = async ()=>{
    const result = await getRecipeMistral(ingredient)
    setRecipeShown(result)
-   setLoading(false)
+    if(result || result.error){
+      setLoading(false)
+    }
  }
 
   return (
