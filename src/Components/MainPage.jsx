@@ -7,9 +7,9 @@ import { useState } from "react";
 
 
 
-function Addingredients() {
-  const [ingredient, setIngredients] = React.useState([])
-  const [recipeShown, setRecipeShown]= React.useState("")  
+function Addingredients(props) {
+  const [ingredient, setIngredients] = useState(["raju" ,"apple","banana"]);
+  const [recipeShown, setRecipeShown]= useState("")  
   const [loading, setLoading]= useState(false)
 
   const recipeSection = React.useRef(null)
@@ -26,6 +26,10 @@ function Addingredients() {
     const item = formData.get('listItems')?.trim();
     setIngredients(prevItem => [...prevItem, item])
 
+  }
+  function removeItem(index) {
+    const updatedIngredients = ingredient.filter((_, i) => i !== index);
+    setIngredients(updatedIngredients);
   }
   function ShowRecipe(){
     setLoading(true)
@@ -55,6 +59,7 @@ function Addingredients() {
         ShowRecipe={ShowRecipe}
         ingredient ={ingredient}
         loader={loading}
+        removeItem={removeItem}
     />
       <Cloudrecipe 
       recipeShown={recipeShown}
